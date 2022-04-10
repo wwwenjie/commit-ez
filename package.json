@@ -1,0 +1,19 @@
+{
+  "name": "commit-ez",
+  "version": "1.0.0",
+  "description": "A git commit cli help git users to write git commit messages easily.",
+  "bin": {
+    "commit": "./index.js"
+  },
+  "type": "module",
+  "author": "wwwenjie",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "conf": "^10.1.2",
+    "execa": "^6.1.0",
+    "lodash.orderby": "^4.6.0",
+    "lodash.uniqby": "^4.7.0",
+    "prompts": "^2.4.2"
+  }
+}
