@@ -5,9 +5,21 @@
   "bin": {
     "commit": "./index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwwenjie/commit-ez.git"
+  },
+  "keywords": [
+    "git",
+    "cli"
+  ],
   "type": "module",
   "author": "wwwenjie",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wwwenjie/commit-ez/issues"
+  },
+  "homepage": "https://github.com/wwwenjie/commit-ez#readme",
   "dependencies": {
     "chalk": "^5.0.1",
     "conf": "^10.1.2",
