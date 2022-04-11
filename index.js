@@ -56,7 +56,7 @@ try {
     validate: value => Boolean(value)
   }], { onCancel })
 
-  await execa('git', ['add', '.'])
+  await execa('git', ['add', '.'], { stdio: 'inherit' })
   const commitMessage = isTwStyle() ? `[${config.get('username')}] #${response.card} ${response.type}: ${response.description}` : `${response.type}: ${response.description}`
 
   config.set('history', [...history, {
@@ -65,8 +65,7 @@ try {
     ...response
   }])
 
-  const { stdout } = await execa('git', ['commit', '-m', commitMessage])
-  console.log(stdout)
+  await execa('git', ['commit', '-m', commitMessage], { stdio: 'inherit' })
 } catch (e) {
   if (e instanceof AbortedError) {
     process.exitCode = 1
