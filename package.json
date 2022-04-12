@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "description": "A git commit cli help git users to write git commit messages easily.",
   "bin": {
-    "commit": "./index.js"
+    "commit": "bin/commit.js"
   },
   "scripts": {
     "release": "standard-version"
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/wwwenjie/commit-ez#readme",
   "dependencies": {
     "chalk": "^5.0.1",
+    "commander": "^9.1.0",
     "conf": "^10.1.2",
     "execa": "^6.1.0",
     "lodash.orderby": "^4.6.0",
