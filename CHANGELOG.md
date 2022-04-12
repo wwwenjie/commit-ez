@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/wwwenjie/commit-ez/compare/v1.1.2...v1.2.0) (2022-04-12)
+
+
+### Features
+
+* add card description ([73e38c0](https://github.com/wwwenjie/commit-ez/commit/73e38c0e91696930efed5a5da7c34593dcd5d0f2))
+* add commander and several new options ([56e8554](https://github.com/wwwenjie/commit-ez/commit/56e85549acb5cde1f6594422abea19b98511e90f))
+* add pkg in utils ([beff705](https://github.com/wwwenjie/commit-ez/commit/beff70577dedbb636983ed8879b5f2fe4b071af9))
+* set execa stdio to inherit ([9a38ff4](https://github.com/wwwenjie/commit-ez/commit/9a38ff4cc77ea76b21b1bd89a0dbd24c876f78d5))
+* show history and double confirm when clear data ([cf789c1](https://github.com/wwwenjie/commit-ez/commit/cf789c1c97eaa1248f780a2c499aa149f1b7cac9))
+
 ### [1.1.2](https://github.com/wwwenjie/commit-ez/compare/v1.1.1...v1.1.2) (2022-04-11)
 
 
