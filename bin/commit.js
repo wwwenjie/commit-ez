@@ -4,8 +4,11 @@ import chalk from 'chalk'
 import { program } from 'commander'
 import { config, configFormat, configUsername } from '../lib/config.js'
 import { commit } from '../lib/commit.js'
+import { pkg } from '../utils.js'
 
 program
+  .name('commit')
+  .version(pkg.version)
   .description('A git commit cli help git users to write git commit messages easily.')
   .option('-s, --staged', 'only commit staged files')
   .action(async () => {
