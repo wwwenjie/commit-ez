@@ -38,17 +38,24 @@ try {
     }))
   }, {
     type: _ => isTwStyle() ? 'select' : null,
-    name: 'card',
+    name: 'cardChoice',
     message: 'Which card do you work for?',
-    choices: ['input manually', ...getCardNumbers(history)].map(option => ({
-      title: option,
-      value: option
-    }))
+    choices: [...getCardOptions(history), {
+      title: 'input manually',
+      value: 'input manually'
+    }]
   }, {
-    type: prev => prev === 'input manually' ? 'text' : null,
-    name: 'card',
+    type: (_, { cardChoice }) => cardChoice === 'input manually' ? 'text' : null,
+    name: 'cardNumber',
     message: 'Input card number',
     validate: value => Boolean(value)
+  }, {
+    type: (_, { cardChoice }) => cardChoice === 'input manually' ? 'text' : null,
+    name: 'cardDescription',
+    message: 'Input card description (Return to skip)',
+    onRender () {
+      this.msg = `Input card description ${chalk.gray('(Return to skip)')}`
+    }
   }, {
     type: 'text',
     name: 'description',
@@ -57,12 +64,18 @@ try {
   }], { onCancel })
 
   await execa('git', ['add', '.'], { stdio: 'inherit' })
-  const commitMessage = isTwStyle() ? `[${config.get('username')}] #${response.card} ${response.type}: ${response.description}` : `${response.type}: ${response.description}`
+  const cardNumber = response.cardNumber || response.cardChoice
+  const commitMessage = isTwStyle() ? `[${config.get('username')}] #${cardNumber} ${response.type}: ${response.description}` : `${response.type}: ${response.description}`
 
   config.set('history', [...history, {
     username: config.get('username'),
     date: new Date(),
-    ...response
+    type: response.type,
+    description: response.description,
+    card: {
+      number: cardNumber,
+      description: response.cardDescription
+    }
   }])
 
   await execa('git', ['commit', '-m', commitMessage], { stdio: 'inherit' })
@@ -73,9 +86,16 @@ try {
   console.error(chalk.red(e.message))
 }
 
-function getCardNumbers (history) {
+function getCardOptions (history) {
   const descHistory = orderBy(history, 'date', 'desc')
-  return uniqBy(descHistory, 'card').slice(0, 5).map(h => h.card)
+  return uniqBy(descHistory, 'card.number').slice(0, 5).map(h => {
+    const card = h.card
+    return {
+      title: card.number,
+      description: card.description,
+      value: card.number
+    }
+  })
 }
 
 function isTwStyle () {
