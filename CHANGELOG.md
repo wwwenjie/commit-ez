@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/wwwenjie/commit-ez/compare/v1.2.0...v1.2.1) (2022-04-12)
+
+
+### Bug Fixes
+
+* check node version ([0c6359e](https://github.com/wwwenjie/commit-ez/commit/0c6359effe8b763341fbcb41c416034ae67412d1))
+
 ## [1.2.0](https://github.com/wwwenjie/commit-ez/compare/v1.1.2...v1.2.0) (2022-04-12)
 
 
