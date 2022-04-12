@@ -30,9 +30,13 @@
     "execa": "^6.1.0",
     "lodash.orderby": "^4.6.0",
     "lodash.uniqby": "^4.7.0",
-    "prompts": "^2.4.2"
+    "prompts": "^2.4.2",
+    "semver": "^7.3.6"
   },
   "devDependencies": {
     "standard-version": "^9.3.2"
+  },
+  "engines": {
+    "node": "^12.20.0 || >=14.0.0"
   }
 }
