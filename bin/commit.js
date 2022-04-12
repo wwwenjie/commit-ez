@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
 import chalk from 'chalk'
+import prompts from 'prompts'
 import { program } from 'commander'
 import { config, configFormat, configUsername } from '../lib/config.js'
 import { commit } from '../lib/commit.js'
-import { pkg } from '../utils.js'
+import { onCancel, pkg } from '../utils.js'
+import { showHistory } from '../lib/history.js'
 
 program
   .name('commit')
@@ -38,15 +40,22 @@ program
   .command('ls')
   .description('output commit message history')
   .action(() => {
-    console.log(config.get('history'))
+    showHistory()
   })
 
 program
   .command('clear')
   .description('clear all config and history')
-  .action(() => {
-    config.clear()
-    console.log(chalk.green('clear success'))
+  .action(async () => {
+    const confirm = await prompts({
+      type: 'confirm',
+      name: 'value',
+      message: 'Are you sure? This is reversible',
+    }, { onCancel })
+    if (confirm.value) {
+      config.clear()
+      console.log(chalk.green('clear success'))
+    }
   })
 
 program.parse()
