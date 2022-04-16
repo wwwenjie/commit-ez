@@ -8,6 +8,7 @@ import { commit } from '../lib/commit.js'
 import { checkNodeVersion, checkUpdate, onCancel } from '../utils.js'
 import { showHistory } from '../lib/history.js'
 import { pkg } from '../env.js'
+import { inspect } from 'util'
 
 checkNodeVersion(pkg.engines.node, pkg.name)
 checkUpdate()
@@ -36,7 +37,7 @@ program
     }
     if (options.json) {
       console.log(chalk.cyan(`Resolved path: ${config.path}`))
-      console.log(config.store)
+      console.log(inspect(config.store, { showHidden: false, depth: Infinity, colors: true }))
     }
   })
 
