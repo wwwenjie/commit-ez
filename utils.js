@@ -1,14 +1,9 @@
-import { FORMAT } from './constants.js'
 import { config } from './lib/config.js'
 import chalk from 'chalk'
 import semver from 'semver'
 import fetch from 'node-fetch'
 import { execaSync } from 'execa'
 import { hasYarn, pkg, __dirname } from './env.js'
-
-export const isTwStyle = () => {
-  return config.get('format') === FORMAT.THOUGHTWORKS
-}
 
 // use for prompts cancel
 export const onCancel = () => {
@@ -94,4 +89,3 @@ function getGlobalInstallCommand () {
     return `npm i -g`
   }
 }
-

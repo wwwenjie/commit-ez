@@ -1,16 +1,10 @@
 #!/usr/bin/env node
 
-import chalk from 'chalk'
-import prompts from 'prompts'
 import { program } from 'commander'
-import { config, configFormat, configUsername } from '../lib/config.js'
-import { commit } from '../lib/commit.js'
-import { checkNodeVersion, checkUpdate, isTwStyle, onCancel } from '../utils.js'
-import { lastHistory, showHistory } from '../lib/history.js'
+import { clearConfig, configFormat, configUsername, outputConfigJson } from '../lib/config.js'
+import { commit, outputHistory, redo, undo } from '../lib/commit.js'
+import { checkNodeVersion, checkUpdate } from '../utils.js'
 import { pkg } from '../env.js'
-import { inspect } from 'util'
-import { execa } from 'execa'
-import { getCommitMessage } from '../format.js'
 
 checkNodeVersion(pkg.engines.node, pkg.name)
 checkUpdate()
@@ -28,50 +22,28 @@ program
   .command('redo')
   .description('commit again with last message')
   .action(async () => {
-    const history = lastHistory()
-
-    if (!history) {
-      console.log('no history yet')
-      process.exit(1)
-    }
-
-    await execa('git', ['commit', '-m', getCommitMessage(history)], { stdio: 'inherit' })
-      .catch(() => {
-        process.exit(1)
-      })
+    await redo()
   })
 
 program
   .command('undo')
   .description('undo last commit')
   .action(async () => {
-    await execa('git', ['reset', '--soft', 'HEAD~1'], { stdio: 'inherit' })
-      .catch(() => {
-        process.exit(1)
-      })
-    console.log(chalk.green('success'))
+    await undo()
   })
 
 program
   .command('ls')
   .description('output commit message history')
   .action(() => {
-    showHistory()
+    outputHistory()
   })
 
 program
   .command('clear')
   .description('clear all config and history')
   .action(async () => {
-    const confirm = await prompts({
-      type: 'confirm',
-      name: 'value',
-      message: 'Are you sure? This is reversible',
-    }, { onCancel })
-    if (confirm.value) {
-      config.clear()
-      console.log(chalk.green('clear success'))
-    }
+    await clearConfig()
   })
 
 program
@@ -88,8 +60,7 @@ program
       await configFormat()
     }
     if (options.json) {
-      console.log(chalk.cyan(`Resolved path: ${config.path}`))
-      console.log(inspect(config.store, { showHidden: false, depth: Infinity, colors: true }))
+      outputConfigJson()
     }
   })
 
