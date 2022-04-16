@@ -5,10 +5,12 @@ import prompts from 'prompts'
 import { program } from 'commander'
 import { config, configFormat, configUsername } from '../lib/config.js'
 import { commit } from '../lib/commit.js'
-import { checkNodeVersion, onCancel, pkg } from '../utils.js'
+import { checkNodeVersion, checkUpdate, onCancel } from '../utils.js'
 import { showHistory } from '../lib/history.js'
+import { pkg } from '../env.js'
 
 checkNodeVersion(pkg.engines.node, pkg.name)
+checkUpdate()
 
 program
   .name('commit')
