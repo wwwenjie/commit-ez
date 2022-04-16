@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/wwwenjie/commit-ez/compare/v1.2.1...v1.3.0) (2022-04-16)
+
+
+### Features
+
+* add redo and undo command ([17e0d5e](https://github.com/wwwenjie/commit-ez/commit/17e0d5e3eb25ba6d49d86cb789d457dd02df2814))
+* check update ([3b8b79d](https://github.com/wwwenjie/commit-ez/commit/3b8b79d8274b837de3c80ccdd97d3865cfecfeac))
+* show infinity depth when config --json ([d3925e3](https://github.com/wwwenjie/commit-ez/commit/d3925e307656e616dd951701b3001c340518ac29))
+
+
+### Bug Fixes
+
+* avoid console git error message again ([4975a30](https://github.com/wwwenjie/commit-ez/commit/4975a30243dbb6e3557a14cd124e2d910c548379))
+* card description missing when select from options ([9d80ad1](https://github.com/wwwenjie/commit-ez/commit/9d80ad1da9fd05c326874dabce5786c2e4273220))
+
 ### [1.2.1](https://github.com/wwwenjie/commit-ez/compare/v1.2.0...v1.2.1) (2022-04-12)
 
 
