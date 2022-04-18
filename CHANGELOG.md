@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/wwwenjie/commit-ez/compare/v1.3.0...v1.3.1) (2022-04-18)
+
+
+### Bug Fixes
+
+* history order when redo and output json ([9a9babc](https://github.com/wwwenjie/commit-ez/commit/9a9babce31afe135a70a15cea2365fbe28c9804f))
+
 ## [1.3.0](https://github.com/wwwenjie/commit-ez/compare/v1.2.1...v1.3.0) (2022-04-16)
 
 
