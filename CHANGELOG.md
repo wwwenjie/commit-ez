@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/wwwenjie/commit-ez/compare/v1.3.1...v1.3.2) (2022-04-19)
+
+
+### Bug Fixes
+
+* move card description prompt to last ([f5258e1](https://github.com/wwwenjie/commit-ez/commit/f5258e1d8f398bfb4f2d81ebf670c875e5c993c9))
+
 ### [1.3.1](https://github.com/wwwenjie/commit-ez/compare/v1.3.0...v1.3.1) (2022-04-18)
 
 
