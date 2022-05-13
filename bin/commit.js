@@ -13,7 +13,8 @@ program
   .name('commit')
   .version(pkg.version)
   .description('A git commit cli help git users to write git commit messages easily.')
-  .option('-s, --staged', 'only commit staged files')
+  .option('-s, --staged', 'only commit staged files', false)
+  .option('-d, --deep <length>', 'length of cards for selecting', 5)
   .action(async () => {
     await commit(program.opts())
   })
