@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/wwwenjie/commit-ez/compare/v1.3.2...v1.4.0) (2022-05-13)
+
+
+### Features
+
+* add commit message when redo ([84f972c](https://github.com/wwwenjie/commit-ez/commit/84f972cb8c0e26414bf717dfd309cf83755bbb0d))
+
+
+### Bug Fixes
+
+* add git add in redo command ([2e98158](https://github.com/wwwenjie/commit-ez/commit/2e981585fb6971be1ba4ec7a261381d2dd103c52))
+
 ### [1.3.2](https://github.com/wwwenjie/commit-ez/compare/v1.3.1...v1.3.2) (2022-04-19)
 
 
