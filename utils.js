@@ -4,10 +4,19 @@ import semver from 'semver'
 import fetch from 'node-fetch'
 import { execaSync } from 'execa'
 import { hasYarn, pkg, __dirname } from './env.js'
+import { InvalidArgumentError } from 'commander'
 
 // use for prompts cancel
 export const onCancel = () => {
   process.exit(1)
+}
+
+export const commandParseInt = (value, _) => {
+  const parsedValue = parseInt(value, 10)
+  if (isNaN(parsedValue)) {
+    throw new InvalidArgumentError('Not a number.')
+  }
+  return parsedValue
 }
 
 export const checkNodeVersion = (wanted, id) => {
