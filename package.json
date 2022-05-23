@@ -28,7 +28,7 @@
     "commander": "^9.1.0",
     "conf": "^10.1.2",
     "execa": "^6.1.0",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "node-fetch": "^3.2.3",
     "prompts": "^2.4.2",
     "semver": "^7.3.6"
