@@ -5,6 +5,8 @@ import { clearConfig, configFormat, configUsername, outputConfigJson } from '../
 import { commit, outputHistory, redo, undo } from '../lib/commit.js'
 import { checkNodeVersion, checkUpdate, commandParseInt } from '../utils.js'
 import { pkg } from '../env.js'
+import { isEmpty } from 'lodash-es'
+import chalk from 'chalk'
 
 checkNodeVersion(pkg.engines.node, pkg.name)
 checkUpdate()
@@ -17,6 +19,11 @@ program
   .option('-s, --staged', 'only commit staged files', false)
   .option('-d, --deep <length>', 'length of cards for selecting', commandParseInt, 5)
   .action(async () => {
+    if (!isEmpty(program.args)) {
+      console.log(chalk.red('invalid argument'))
+      process.exit(1)
+    }
+
     await commit(program.opts())
   })
 
