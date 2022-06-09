@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/wwwenjie/commit-ez/compare/v1.4.0...v1.5.0) (2022-06-09)
+
+
+### Features
+
+* add -p --push tag to run git push after committing ([ffc294a](https://github.com/wwwenjie/commit-ez/commit/ffc294adb7d5df65d4de94629c3c8cedccd93f2c))
+* add promots for invalid argument when call single commit command ([5eba1de](https://github.com/wwwenjie/commit-ez/commit/5eba1de11782fc45066b88845a564d5a4777f9ec))
+* add spinner when fetch cards remote ([744e3cf](https://github.com/wwwenjie/commit-ez/commit/744e3cfe71f95c28071e6a0e11e855caf3f4ee8c))
+* handle 401 when fetch trello cards ([f4a4f2b](https://github.com/wwwenjie/commit-ez/commit/f4a4f2ba0772c154195a4fea90c93a8620804d6e))
+* trello integration ([581777e](https://github.com/wwwenjie/commit-ez/commit/581777eca7558b463adb84b881b0dbceb5e9d70c))
+* use password type when input key and token ([c9de8bc](https://github.com/wwwenjie/commit-ez/commit/c9de8bc0bef24cb0714d86fc0fc4cfa2b6307d67))
+
+
+### Bug Fixes
+
+* handle string input in --deep option ([a3efd96](https://github.com/wwwenjie/commit-ez/commit/a3efd96d68361f11aeaf0478b3af7a0b692b5333))
+
 ## [1.4.0](https://github.com/wwwenjie/commit-ez/compare/v1.3.2...v1.4.0) (2022-05-13)
 
 
