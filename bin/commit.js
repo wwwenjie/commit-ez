@@ -11,6 +11,8 @@ import chalk from 'chalk'
 checkNodeVersion(pkg.engines.node, pkg.name)
 checkUpdate()
 
+program.enablePositionalOptions()
+
 program
   .name('commit')
   .version(pkg.version)
@@ -18,20 +20,21 @@ program
   .option('-p, --push', 'run git pull -r and git push after committing', false)
   .option('-s, --staged', 'only commit staged files', false)
   .option('-d, --deep <length>', 'length of cards for selecting', commandParseInt, 5)
-  .action(async () => {
+  .action(async (options) => {
     if (!isEmpty(program.args)) {
       console.log(chalk.red('invalid argument'))
       process.exit(1)
     }
 
-    await commit(program.opts())
+    await commit(options)
   })
 
 program
   .command('redo')
   .description('commit again with last message')
-  .action(async () => {
-    await redo()
+  .option('-p, --push', 'run git pull -r and git push after committing', false)
+  .action(async (options) => {
+    await redo(options)
   })
 
 program
@@ -44,8 +47,9 @@ program
 program
   .command('ls')
   .description('output commit message history')
-  .action(() => {
-    outputHistory()
+  .option('-d, --deep <length>', 'length of history to output', commandParseInt, 999)
+  .action((options) => {
+    outputHistory(options)
   })
 
 program
