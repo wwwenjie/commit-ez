@@ -60,12 +60,12 @@ program
   })
 
 program
-  .command('config [value]')
+  .command('config')
   .description('inspect and modify the config')
   .option('--username', 'config username')
   .option('--format', 'config commit message format')
   .option('--json', 'output json result')
-  .action(async (_, options) => {
+  .action(async (options) => {
     if (options.username) {
       await configUsername()
     }
