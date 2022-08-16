@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/wwwenjie/commit-ez/compare/v1.5.0...v2.0.0) (2022-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* change card description to card name, add formats
+* add -s --scope option, move -s --staged to --staged
+
+### Features
+
+* add -s --scope option, move -s --staged to --staged ([0092ebd](https://github.com/wwwenjie/commit-ez/commit/0092ebdbd49451c67b911b73182f785e309d79b9))
+* add push option to redo, add deep option to ls ([44d839d](https://github.com/wwwenjie/commit-ez/commit/44d839db6e7e3d1b0715fb856fa0b5bae37c234f))
+* change card description to card name, add formats ([9b67ad4](https://github.com/wwwenjie/commit-ez/commit/9b67ad4419f4fda8378a6ebd11d594976abfa9d0))
+* config with select, add config for integrations ([90a61ec](https://github.com/wwwenjie/commit-ez/commit/90a61ecb9abc3b97fffbcecf90af551bef4b6987))
+* move description after card in prompts ([07fdadd](https://github.com/wwwenjie/commit-ez/commit/07fdaddc8fa4405bb890562f6badafc91598586f))
+
+
+### Bug Fixes
+
+* ora showing when set trello token ([16c650b](https://github.com/wwwenjie/commit-ez/commit/16c650bc46c77eb365335d8c06d3bd22df993a68))
+
 ## [1.5.0](https://github.com/wwwenjie/commit-ez/compare/v1.4.0...v1.5.0) (2022-06-09)
 
 
