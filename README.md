@@ -20,24 +20,25 @@ add all files to stage and commit
 commit
 ```
 
-more options and commands
+more options and commands `commit -h`
 
 ```
-commit -h    
 Usage: commit [options] [command]
 
 A git commit cli help git users to write git commit messages easily.
 
 Options:
-  -V, --version             output the version number
-  -s, --staged              only commit staged files
-  -h, --help                display help for command
+  -V, --version        output the version number
+  -p, --push           run git pull -r and git push after committing (default: false)
+  -s, --scope          add scope to commit message (default: false)
+  --staged             only commit staged files (default: false)
+  -d, --deep <length>  length of cards for selecting (default: 5)
+  -h, --help           display help for command
 
 Commands:
-  redo                      commit again with last message
-  undo                      undo last commit
-  ls                        output commit message history
-  clear                     clear all config and history
-  config [options] [value]  inspect and modify the config
-
+  redo [options]       commit again with last message
+  undo                 undo last commit
+  ls [options]         output commit message history
+  clear                clear all config and history
+  config               inspect and modify the config
 ```
