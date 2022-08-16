@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander'
-import { clearConfig, configFormat, configUsername, outputConfigJson } from '../lib/config.js'
+import { clearConfig, selectConfig } from '../lib/config.js'
 import { commit, outputHistory, redo, undo } from '../lib/commit.js'
 import { checkNodeVersion, checkUpdate, commandParseInt } from '../utils.js'
 import { pkg } from '../env.js'
@@ -63,19 +63,8 @@ program
 program
   .command('config')
   .description('inspect and modify the config')
-  .option('--username', 'config username')
-  .option('--format', 'config commit message format')
-  .option('--json', 'output json result')
-  .action(async (options) => {
-    if (options.username) {
-      await configUsername()
-    }
-    if (options.format) {
-      await configFormat()
-    }
-    if (options.json) {
-      outputConfigJson()
-    }
+  .action(async () => {
+    await selectConfig()
   })
 
 program.parse()
