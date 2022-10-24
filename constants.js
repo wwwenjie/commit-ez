@@ -4,7 +4,8 @@ export const FORMAT = {
 }
 
 export const INTEGRATION = {
-  TRELLO: 'TRELLO'
+  TRELLO: 'TRELLO',
+  JIRA: 'JIRA'
 }
 
 export const INPUT_MANUALLY = 'INPUT_MANUALLY'
