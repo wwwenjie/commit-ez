@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/wwwenjie/commit-ez/compare/v2.0.1...v2.1.0) (2022-10-24)
+
+
+### Features
+
+* add jira integration ([8b68d7f](https://github.com/wwwenjie/commit-ez/commit/8b68d7f3ebac54dac01636497bec8ca07a408506))
+
+
+### Bug Fixes
+
+* integrations undefined at first start ([9d1efeb](https://github.com/wwwenjie/commit-ez/commit/9d1efebc64cdff429e250f5d8eda81ca1bb07632))
+
 ### [2.0.1](https://github.com/wwwenjie/commit-ez/compare/v2.0.0...v2.0.1) (2022-09-28)
 
 
