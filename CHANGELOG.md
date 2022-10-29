@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/wwwenjie/commit-ez/compare/v2.0.1...v2.0.2) (2022-10-29)
+
+
+### Bug Fixes
+
+* integrations undefined at first start ([9d1efeb](https://github.com/wwwenjie/commit-ez/commit/9d1efebc64cdff429e250f5d8eda81ca1bb07632))
+* undefined integrationsIds when only use conventional ([af9873d](https://github.com/wwwenjie/commit-ez/commit/af9873d995399ba2a8fd7f182d9b092fcc85bc08))
+
 ### [2.0.1](https://github.com/wwwenjie/commit-ez/compare/v2.0.0...v2.0.1) (2022-09-28)
 
 
