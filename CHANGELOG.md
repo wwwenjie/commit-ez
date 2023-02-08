@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/wwwenjie/commit-ez/compare/v2.1.1...v2.2.0) (2023-02-08)
+
+
+### Features
+
+* jira cards can filter with project ([38a5b7c](https://github.com/wwwenjie/commit-ez/commit/38a5b7c04bfc6de2bb1f88a9da0ce1b17d728e16))
+
 ### [2.1.1](https://github.com/wwwenjie/commit-ez/compare/v2.1.0...v2.1.1) (2022-10-29)
 
 
