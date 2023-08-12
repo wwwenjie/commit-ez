@@ -59,7 +59,6 @@ export const getVersions = () => {
 
   let latest = cached
 
-  // if the installed version is updated but the cache doesn't update
   if (semver.gt(local, latest)) {
     latest = local
   }
