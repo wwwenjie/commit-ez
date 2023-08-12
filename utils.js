@@ -3,7 +3,7 @@ import chalk from 'chalk'
 import semver from 'semver'
 import fetch from 'node-fetch'
 import { execaSync } from 'execa'
-import { hasYarn, pkg, __dirname } from './env.js'
+import { hasYarn, hasPnpm, pkg, __dirname } from './env.js'
 import { InvalidArgumentError } from 'commander'
 
 // use for prompts cancel
@@ -90,6 +90,13 @@ function getGlobalInstallCommand () {
     const { stdout: yarnGlobalDir } = execaSync('yarn', ['global', 'dir'])
     if (__dirname.includes(yarnGlobalDir)) {
       return 'yarn global add'
+    }
+  }
+
+  if (hasPnpm()) {
+    const { stdout: pnpmGlobalDir } = execaSync('pnpm', ['root', '-g'])
+    if (__dirname.includes(pnpmGlobalDir)) {
+      return 'pnpm i -g'
     }
   }
 
